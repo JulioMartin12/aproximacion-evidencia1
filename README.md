@@ -11,4 +11,4 @@ alerta por Wi-Fi o activa una alarma.</li>
 </ul>
 </p>
 <a href="https://wokwi.com/projects/408565990076104705"> Monitor de nivel de sonido </a>
- ![Diagrama](../aproximacion-evidencia1/Monitor de nivel de sonido/Monitor de nivel de sonido.JPG)
+ ![Diagrama](../aproximacion-evidencia1/Monitordeniveldesonido/Monitordeniveldesonido.JPG)
