@@ -1,4 +1,4 @@
-# Detector de movimiento con alarma (Olmos Gustavo):
+# Detector de movimiento con alarma:
 
 * Descripción: Implementa un sistema de seguridad que detecta movimiento.
 
