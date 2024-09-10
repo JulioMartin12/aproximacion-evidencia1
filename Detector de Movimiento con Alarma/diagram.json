@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 4.7,
+      "left": -43.4,
+      "attrs": { "env": "micropython-20220618-v1.19.1" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -101.6, "left": 79.02, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 31.2,
+      "left": -151.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 60.74,
+      "left": 221.03,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "pir1:VCC", "esp:D19", "red", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "bz1:1", "esp:GND.2", "black", [ "v0" ] ],
+    [ "bz1:2", "esp:D13", "red", [ "v0" ] ],
+    [ "oled1:GND", "esp:GND.1", "black", [ "v-28.8", "h-67.2", "v192.1" ] ],
+    [ "oled1:VCC", "esp:3V3", "red", [ "v-38.4", "h-86.25", "v211.2" ] ],
+    [ "pir1:OUT", "esp:D23", "green", [ "v0" ] ],
+    [ "oled1:SCL", "esp:D22", "green", [ "v-19.2", "h-182.1", "v-9.3" ] ],
+    [ "oled1:SDA", "esp:D21", "blue", [ "v-9.6", "h-143.93", "v10" ] ]
+  ],
+  "dependencies": {}
+}
