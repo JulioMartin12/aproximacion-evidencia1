@@ -1,3 +1,4 @@
+<h2>Monitor de nivel de sonido</h2>
 <p>
 <ul>
 <li>Descripción: Monitorea el nivel de ruido en una habitación.</li>
