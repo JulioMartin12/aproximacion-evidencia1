@@ -80,7 +80,7 @@ Luego esperamos un momento.
 oled.fill(0)  
 oled.show() 
 ```
-Y la primer línea borra el contenido del display y la segunda muestra el display borrado.
+La primera línea borra el contenido del display y la segunda muestra el display borrado.
 ```python
 time.sleep(0.75) 
 ```
