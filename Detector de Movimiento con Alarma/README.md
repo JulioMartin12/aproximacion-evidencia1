@@ -112,7 +112,7 @@ Dejo las pruebas en el siguiente link:
 
 [Pruebas relizadas](https://firebasestorage.googleapis.com/v0/b/ciencia-de-datos-ispc.appspot.com/o/int%20prog%2Fprueba%20detector%20de%20movimiento.mp4?alt=media&token=d871fef8-e919-4de8-92d1-472b3e90dd81)
 
-Una mejor que intente realizar y no llegué por falta de tiempo era que cuando se detecte movimiento, envíe un mensaje a un número de Whatsapp determinado. Estuve investigando que se puede hacer con CallMeBoot pero no llegue a concretarlo.
+Una mejora que intente realizar y no llegué por falta de tiempo era que cuando se detecte movimiento, envíe un mensaje a un número de Whatsapp determinado. Estuve investigando que se puede hacer con CallMeBoot pero no llegue a concretarlo.
 
 ## Conclusión:
 
