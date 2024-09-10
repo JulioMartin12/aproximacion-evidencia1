@@ -20,7 +20,7 @@ Para este proyecto utilizamos: un módulo esp32, un sensor Pir, un Buzzer y un d
 
 ## Esquema de Conexión y Diagrama:
 
-[Link al Diagrama](https://wokwi.com/projects/408580463353840641)
+[Link al Diagrama en Wokwi](https://wokwi.com/projects/408580463353840641)
 
 ![Esquema de conexión](https://firebasestorage.googleapis.com/v0/b/ciencia-de-datos-ispc.appspot.com/o/int%20prog%2Fdetector%20de%20mov.jpg?alt=media&token=d560f07f-295b-43d8-9cf3-0bb1b6185a16)
 
