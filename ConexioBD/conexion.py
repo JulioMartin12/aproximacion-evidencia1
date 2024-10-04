@@ -54,8 +54,8 @@ def receive_data():
             cursor = connection.cursor()
 
             # Supongamos que 'data' tiene un campo 'name' y 'value'
-            sql = "INSERT INTO  gases (escala_ppm) VALUES (%s)"
-            values = (data['medicion'])
+            sql = "INSERT INTO  gases (escala_ppm,mensaje) VALUES (%s,%s)"
+            values = (data['medicion'], data['mensaje'])
 
             cursor.execute(sql, values)
             connection.commit()
