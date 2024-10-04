@@ -35,7 +35,7 @@ def connect_to_db():
 
 @app.route('/')
 def home():
-    return "<p>Bienvenido a la API de Gases</p>"
+    return "<p>Bienvenido a la API de los Desprogramadores</p>"
 
 
 # MARCELO
