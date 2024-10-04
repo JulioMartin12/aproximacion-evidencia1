@@ -41,7 +41,7 @@ def home():
 # MARCELO
 # ------------------------------------------------------------------------------------------
 @app.route('/api/gas/data', methods=['POST'])
-def receive_data():
+def receive_data_gas():
     if request.is_json:
         data = request.get_json()
 
@@ -78,7 +78,7 @@ def receive_data():
 # GUS
 # ------------------------------------------------------------------------------------------
 @app.route('/api/movimiento/data', methods=['POST'])
-def receive_data():
+def receive_data_movimiento():
     if request.is_json:
         data = request.get_json()
 
@@ -116,7 +116,7 @@ def receive_data():
 
 
 @app.route('/api/sonido/data', methods=['POST'])
-def receive_data():
+def receive_data_sonido():
     if request.is_json:
         data = request.get_json()
 
