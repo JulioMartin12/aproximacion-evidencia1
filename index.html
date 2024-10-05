@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Proyectos</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="project">
+    <img src="../Detector de Movimiento con Alarma/esquema.JPG" alt="Detector de Movimiento">
+    <div class="buttons">
+      <button onclick="goToProject(1)">Ir al Proyecto</button>
+      <button onclick="cargarTabla(1)">Ver Tabla</button>
+    </div>
+  </div>
+  <div class="project">
+    <img src="../Monitor de calidad del aire/esquema.jpg" alt="Monitor de Calidad del Aire">
+    <div class="buttons">
+      <button onclick="goToProject(2)">Ir al Proyecto</button>
+      <button onclick="cargarTabla(2)">Ver Tabla</button>
+    </div>
+  </div>
+  <div class="project">
+    <img src="../Monitor-de-nivel-de-sonido/Monitor-de-nivel-de-sonido.JPG" alt="Monitor de Nivel de Sonido">
+    <div class="buttons">
+      <button onclick="goToProject(3)">Ir al Proyecto</button>
+      <button onclick="cargarTabla(3)">Ver Datos Almacenados</button>
+    </div>
+  </div>
+</div>
+
+<!-- Tabla para mostrar los datos obtenidos del GET -->
+<table id="tabla-datos" style="display: none;">
+  <thead>
+    <tr>
+      <th>Campo 1</th>
+      <th>Campo 2</th>
+      <th>Campo 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Aquí se agregarán los datos de la tabla -->
+  </tbody>
+</table>
+
+<!-- <script>
+  // Simular la función goToProject (puedes modificarla según sea necesario)
+  function goToProject(projectId) {
+    // Redirigir a la página del proyecto correspondiente
+    window.open('https://www.ejemplo.com/proyecto' + projectId, '_blank');
+  }
+
+  // Cargar datos de ejemplo en la tabla
+  function cargarTabla(projectId) {
+    // Puedes usar diferentes datos para cada proyecto si lo deseas
+    const data = [
+      { campo1: "Ejemplo 1", campo2: "Ejemplo 2", campo3: "Ejemplo 3" },
+      { campo1: "Ejemplo 4", campo2: "Ejemplo 5", campo3: "Ejemplo 6" }
+    ];
+    mostrarDatosEnTabla(data);
+  }
+
+  function mostrarDatosEnTabla(data) {
+    const tablaDatos = document.getElementById('tabla-datos').getElementsByTagName('tbody')[0];
+
+    // Limpiar la tabla antes de agregar nuevos datos
+    tablaDatos.innerHTML = '';
+
+    // Comprobar si se recibieron datos
+    if (!data || data.length === 0) {
+      const nuevaFila = tablaDatos.insertRow();
+      const celda = nuevaFila.insertCell(0);
+      celda.colSpan = 3; // Número de columnas
+      celda.textContent = 'No hay datos disponibles';
+      document.getElementById('tabla-datos').style.display = 'table';
+      return;
+    }
+
+    // Iterar sobre los datos y agregarlos a la tabla
+    data.forEach(item => {
+      const nuevaFila = tablaDatos.insertRow();
+      const celda1 = nuevaFila.insertCell(0);
+      const celda2 = nuevaFila.insertCell(1);
+      const celda3 = nuevaFila.insertCell(2);
+      
+      celda1.textContent = item.campo1; 
+      celda2.textContent = item.campo2; 
+      celda3.textContent = item.campo3; 
+    });
+
+    // Mostrar la tabla
+    document.getElementById('tabla-datos').style.display = 'table';
+  }
+</script>
+ -->
+ <script src="projects.js"></script>
+ <script src="table.js"></script>
+ <script src="getData.js"></script>
+</body>
+</html>

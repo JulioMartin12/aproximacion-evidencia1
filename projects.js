@@ -11,7 +11,7 @@ function goToProject(projectId) {
         projectUrl = "https://wokwi.com/projects/408568500712542209"; 
         break;
       case 3:
-        projectUrl = "https://wokwi.com/projects/410770508355775489"; 
+        projectUrl = "https://wokwi.com/projects/410878492815642625"; 
         break;
       default:
         console.error("Proyecto no encontrado");
