@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evidencia 2 de Aproximación</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="project">
+    <img src="Detector de Movimiento con Alarma/esquema.JPG" alt="Detector de Movimiento">
+    <div class="buttons">
+      <button onclick="goToProject(1)">Ir al Proyecto</button>
+      <button onclick="cargarTabla(1)">Ver Tabla</button>
+    </div>
+  </div>
+  <div class="project">
+    <img src="Monitor de calidad del aire/esquema.jpg" alt="Monitor de Calidad del Aire">
+    <div class="buttons">
+      <button onclick="goToProject(2)">Ir al Proyecto</button>
+      <button onclick="cargarTabla(2)">Ver Tabla</button>
+    </div>
+  </div>
+  <div class="project">
+    <img src="Monitor-de-nivel-de-sonido/Monitor-de-nivel-de-sonido.JPG" alt="Monitor de Nivel de Sonido">
+    <div class="buttons">
+      <button onclick="goToProject(3)">Ir al Proyecto</button>
+      <button onclick="cargarTabla(3)">Ver Datos Almacenados</button>
+    </div>
+  </div>
+</div>
+
+
+<table id="tabla-datos" style="display: none;">
+  <thead>
+    <tr>
+      <th>Campo 1</th>
+      <th>Campo 2</th>
+      <th>Campo 3</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  </tbody>
+</table>
+
+
+ <script src="projects.js"></script>
+ <script src="table.js"></script>
+ <script src="getData.js"></script>
+</body>
+</html>
