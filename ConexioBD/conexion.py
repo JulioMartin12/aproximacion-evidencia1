@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS 
+from flask_cors import CORS
 import mysql.connector
 from mysql.connector import Error
 from flask_cors import CORS
@@ -116,6 +116,8 @@ def receive_data_sensor_movimiento():
 
 # JULIO
 # ------------------------------------------------------------------------------------------
+
+
 @app.route('/api/monitor_sonido', methods=['GET'])
 def get_monitor_sonido():
     connection = connect_to_db()
@@ -142,13 +144,14 @@ def get_monitor_sonido():
         if connection and connection.is_connected():
             cursor.close()
             connection.close()
-            
 
-@app.route('/api/monitor_sonido', methods=['POST'])       
+
+@app.route('/api/monitor_sonido', methods=['POST'])
 def save_monitor_sonido():
     if request.is_json:
         data = request.get_json()
-        required_fields = ['timestamp', 'contador', 'alarma_activada', 'direccion_rotacion', 'estado_boton', 'valor_umbral', 'num_activaciones', 'duracion_alarma']
+        required_fields = ['timestamp', 'contador', 'alarma_activada', 'direccion_rotacion',
+                           'estado_boton', 'valor_umbral', 'num_activaciones', 'duracion_alarma']
         if not all(field in data for field in required_fields):
             return jsonify({"error": "Faltan campos requeridos"}), 400
 
@@ -160,8 +163,9 @@ def save_monitor_sonido():
             cursor = connection.cursor()
             sql = """INSERT INTO monitor_sonido (timestamp, contador, alarma_activada, direccion_rotacion, estado_boton, valor_umbral, num_activaciones, duracion_alarma) 
                      VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"""
-            values = (data['timestamp'], data['contador'], data['alarma_activada'], data['direccion_rotacion'], data['estado_boton'], data['valor_umbral'], data['num_activaciones'], data['duracion_alarma'])
-            
+            values = (data['timestamp'], data['contador'], data['alarma_activada'], data['direccion_rotacion'],
+                      data['estado_boton'], data['valor_umbral'], data['num_activaciones'], data['duracion_alarma'])
+
             cursor.execute(sql, values)
             connection.commit()
 
