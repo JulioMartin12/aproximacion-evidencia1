@@ -75,6 +75,42 @@ def receive_data_gas():
 
     else:
         return jsonify({"error": "El formato de los datos no es JSON"}), 400
+
+
+@app.route('/api/get/gas/data', methods=['GET'])
+def get_data_gas():
+    try:
+        connection = connect_to_db()
+        if connection is None:
+            return jsonify({"error": "No se pudo conectar a la base de datos"}), 500
+
+        cursor = connection.cursor()
+
+        # Seleccionar todos los datos de la tabla 'gases'
+        sql = "SELECT * FROM gases"
+        cursor.execute(sql)
+
+        # Obtener los resultados de la consulta
+        results = cursor.fetchall()
+
+        # Convertir los resultados en un formato JSON
+        gas_data = []
+        for row in results:
+            gas_data.append({
+                "id": row[0],
+                "escala_ppm": row[1],
+                "fecha": row[2]
+            })
+
+        return jsonify(gas_data), 200
+
+    except Error as e:
+        return jsonify({"error": str(e)}), 500
+
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
 # ------------------------------------------------------------------------------------------
 
 
