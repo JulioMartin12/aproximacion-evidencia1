@@ -82,6 +82,67 @@ def receive_data_gas():
 
 # JULIO
 # ------------------------------------------------------------------------------------------
+@app.route('/api/monitor_sonido', methods=['GET'])
+def get_monitor_sonido():
+    connection = connect_to_db()
+    if connection is None:
+        return jsonify({"error": "No se pudo conectar a la base de datos"}), 500
+
+    try:
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM monitor_sonido")
+        records = cursor.fetchall()
+
+        column_names = [i[0] for i in cursor.description]
+
+        result = []
+        for record in records:
+            result.append(dict(zip(column_names, record)))
+
+        return jsonify({"data": result}), 200
+
+    except Error as e:
+        return jsonify({"error": str(e)}), 500
+
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
+            
+
+@app.route('/api/monitor_sonido', methods=['POST'])       
+def save_monitor_sonido():
+    if request.is_json:
+        data = request.get_json()
+        required_fields = ['timestamp', 'contador', 'alarma_activada', 'direccion_rotacion', 'estado_boton', 'valor_umbral', 'num_activaciones', 'duracion_alarma']
+        if not all(field in data for field in required_fields):
+            return jsonify({"error": "Faltan campos requeridos"}), 400
+
+        connection = connect_to_db()
+        if connection is None:
+            return jsonify({"error": "No se pudo conectar a la base de datos"}), 500
+
+        try:
+            cursor = connection.cursor()
+            sql = """INSERT INTO monitor_sonido (timestamp, contador, alarma_activada, direccion_rotacion, estado_boton, valor_umbral, num_activaciones, duracion_alarma) 
+                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"""
+            values = (data['timestamp'], data['contador'], data['alarma_activada'], data['direccion_rotacion'], data['estado_boton'], data['valor_umbral'], data['num_activaciones'], data['duracion_alarma'])
+            
+            cursor.execute(sql, values)
+            connection.commit()
+
+            return jsonify({"message": "Datos guardados correctamente"}), 201
+
+        except Error as e:
+            return jsonify({"error": str(e)}), 500
+
+        finally:
+            if connection and connection.is_connected():
+                cursor.close()
+                connection.close()
+    else:
+        return jsonify({"error": "El formato de los datos no es JSON"}), 400
+
 # ------------------------------------------------------------------------------------------
 
 # aca deberiamos mostrar los datos guardados
