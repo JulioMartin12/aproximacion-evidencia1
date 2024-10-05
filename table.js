@@ -1,7 +1,7 @@
 function cargarTabla(projectId) {
     let url;
   console.log("Entro")
-    // Determinar la URL en función del proyecto
+
     switch (projectId) {
         
       case 1:
@@ -18,7 +18,7 @@ function cargarTabla(projectId) {
         return;
     }
   
-    // Realizar la solicitud fetch
+   
     fetch(url)
       .then(response => {
         if (!response.ok) {
@@ -27,8 +27,8 @@ function cargarTabla(projectId) {
         return response.json();
       })
       .then(data => {
-        console.log("Datos recibidos:", data); // Agregado para depuración
-        mostrarDatosEnTabla(data); // Llamada a la función que muestra los datos
+        console.log("Datos recibidos:", data); 
+        mostrarDatosEnTabla(data); 
       })
       .catch(error => {
         console.error('Error al cargar los datos:', error);
@@ -38,32 +38,32 @@ function cargarTabla(projectId) {
   function mostrarDatosEnTabla(data) {
     const tablaDatos = document.getElementById('tabla-datos').getElementsByTagName('tbody')[0];
     
-    // Limpiar la tabla antes de agregar nuevos datos
+ 
     tablaDatos.innerHTML = '';
   
-    // Verificar que los datos no estén vacíos
+    
     if (!data || data.length === 0) {
       const nuevaFila = tablaDatos.insertRow();
       const celda = nuevaFila.insertCell(0);
-      celda.colSpan = 3; // Número de columnas en la tabla
+      celda.colSpan = 3; 
       celda.textContent = 'No hay datos disponibles';
-      document.getElementById('tabla-datos').style.display = 'table'; // Asegúrate de que la tabla se muestre
+      document.getElementById('tabla-datos').style.display = 'table'; 
       return;
     }
   
-    // Iterar sobre los datos y agregarlos a la tabla
+   
     data.forEach(item => {
       const nuevaFila = tablaDatos.insertRow();
       const celda1 = nuevaFila.insertCell(0);
       const celda2 = nuevaFila.insertCell(1);
       const celda3 = nuevaFila.insertCell(2);
       
-      // Asignar valores a las celdas (ajusta los nombres de las propiedades según el API)
+   
       celda1.textContent = item.campo1 || 'Sin datos'; 
       celda2.textContent = item.campo2 || 'Sin datos'; 
       celda3.textContent = item.campo3 || 'Sin datos';
     });
   
-    // Mostrar la tabla después de cargar los datos
+   
     document.getElementById('tabla-datos').style.display = 'table';
   }
