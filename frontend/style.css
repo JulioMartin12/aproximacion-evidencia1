@@ -1,0 +1,86 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center; /* Centrar los proyectos en el medio */
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  
+  /* Estilos para los proyectos */
+  .project {
+    margin: 20px;
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Fijar el tamaño del contenedor */
+    overflow: hidden; /* Evitar que la imagen se salga del contenedor al hacer zoom */
+  }
+  
+  .project img {
+    width: 100%; /* Imágenes ocuparán todo el contenedor del proyecto */
+    height: 200px; /* Fijar altura para uniformidad */
+    object-fit: cover; /* Escalar imágenes sin deformarlas */
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Transición suave al hacer hover */
+  }
+  
+  .project:hover img {
+    transform: scale(1.1); /* Aumenta la imagen un 10% al hacer hover */
+    object-fit: contain; /* Ver la imagen completa cuando se amplía */
+  }
+  
+  .buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px; /* Espacio entre los botones */
+  }
+  
+  .buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .buttons button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Efecto de "flotar" */
+  }
+  
+  /* Tabla de datos */
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    display: none;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
