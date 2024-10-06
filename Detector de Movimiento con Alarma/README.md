@@ -116,7 +116,7 @@ Una mejora que intente realizar y no llegué por falta de tiempo era que cuando 
 
 Se logra conectar a wifi.
 
-[Coneccion a wi-fi](Simsationalchannel.com/p/wicked-whims-past-versions.html)
+[Coneccion a wi-fi](https://wokwi.com/projects/410869104388279297)
 
 Luego se intenta conectar a Mosquitto:
 [Cnoxecion con Mosquitto](https://wokwi.com/projects/410873072047215617)
