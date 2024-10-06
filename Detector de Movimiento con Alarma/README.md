@@ -114,6 +114,13 @@ Dejo las pruebas en el siguiente link:
 
 Una mejora que intente realizar y no llegué por falta de tiempo era que cuando se detecte movimiento, envíe un mensaje a un número de Whatsapp determinado. Estuve investigando que se puede hacer con CallMeBoot pero no llegue a concretarlo.
 
+Se logra conectar a wifi.
+
+[Coneccion a wi-fi](Simsationalchannel.com/p/wicked-whims-past-versions.html)
+
+Luego se intenta conectar a Mosquitto:
+[Cnoxecion con Mosquitto](https://wokwi.com/projects/410873072047215617)
+
 ## Conclusión:
 
 Este proyecto ha demostrado la viabilidad de utilizar componentes electrónicos de bajo costo para crear soluciones de seguridad sencillas y efectivas. El detector de movimiento puede ser una herramienta útil para proteger hogares o negocios. Además de su función principal, este proyecto puede servir como base para desarrollar sistemas de seguridad más sofisticados, incorporando cámaras, reconocimiento facial y otras tecnologías. Pude aplicar en este proyecto no solo los conocimiento adquiridos en la materia sino que también en otras materias como programación.
