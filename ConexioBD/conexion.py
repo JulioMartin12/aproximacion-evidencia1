@@ -57,7 +57,7 @@ def receive_data_gas():
             cursor = connection.cursor()
 
             # Supongamos que 'data' tiene un campo 'name' y 'value'
-            sql = "INSERT INTO  sensor_gas (escala_ppm) VALUES (%s)"
+            sql = "INSERT INTO sensor_gas (escala_ppm) VALUES (%s)"
             values = (data['medicion'])
 
             cursor.execute(sql, values)
