@@ -48,8 +48,9 @@ def receive_data_gas():
     if request.is_json:
         data = request.get_json()
 
-        if "medicion" not in data or not isinstance(data["medicion"], str):
-            return jsonify({"error": "'medicion' debe ser una cadena de texto"}), 400
+        # Validación del campo "medicion" como número
+        if "medicion" not in data or not isinstance(data["medicion"], (int, float)):
+            return jsonify({"error": "'medicion' debe ser un número"}), 400
 
         try:
             connection = connect_to_db()
@@ -58,6 +59,7 @@ def receive_data_gas():
 
             cursor = connection.cursor()
             sql = "INSERT INTO sensor_gas (escala_ppm) VALUES (%s)"
+            # Asumiendo que 'medicion' es un número
             values = (data["medicion"],)
             cursor.execute(sql, values)
             connection.commit()
@@ -65,7 +67,7 @@ def receive_data_gas():
             return jsonify({"message": "Datos insertados correctamente"}), 200
 
         except Error as e:
-            # Agregar un print para verificar el error exacto
+            # Para más detalles en los logs
             print(f"Error al insertar datos: {e}")
             return jsonify({"error": str(e)}), 500
 
