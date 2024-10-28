@@ -57,7 +57,7 @@ def receive_data_gas():
             cursor = connection.cursor()
 
             # Supongamos que 'data' tiene un campo 'name' y 'value'
-            sql = "INSERT INTO  gases (escala_ppm) VALUES (%s)"
+            sql = "INSERT INTO  sensor_gas (escala_ppm) VALUES (%s)"
             values = (data['medicion'])
 
             cursor.execute(sql, values)
@@ -87,7 +87,7 @@ def get_data_gas():
         cursor = connection.cursor()
 
         # Seleccionar todos los datos de la tabla 'gases'
-        sql = "SELECT * FROM gases"
+        sql = "SELECT * FROM sensor_gas"
         cursor.execute(sql)
 
         # Obtener los resultados de la consulta
