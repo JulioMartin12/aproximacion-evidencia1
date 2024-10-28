@@ -48,27 +48,24 @@ def receive_data_gas():
     if request.is_json:
         data = request.get_json()
 
-        # Validación del campo "medicion" como número
-        if "medicion" not in data or not isinstance(data["medicion"], (int, float)):
-            return jsonify({"error": "'medicion' debe ser un número"}), 400
-
+        # Ejemplo: Insertar los datos recibidos en una tabla MySQL
         try:
             connection = connect_to_db()
             if connection is None:
                 return jsonify({"error": "No se pudo conectar a la base de datos"}), 500
 
             cursor = connection.cursor()
-            sql = "INSERT INTO sensor_gas (escala_ppm) VALUES (%s)"
-            # Asumiendo que 'medicion' es un número
-            values = (data["medicion"],)
+
+            # Supongamos que 'data' tiene un campo 'name' y 'value'
+            sql = "INSERT INTO  sensor_gas (escala_ppm) VALUES (%s)"
+            values = (data['medicion'])
+
             cursor.execute(sql, values)
             connection.commit()
 
             return jsonify({"message": "Datos insertados correctamente"}), 200
 
         except Error as e:
-            # Para más detalles en los logs
-            print(f"Error al insertar datos: {e}")
             return jsonify({"error": str(e)}), 500
 
         finally:
