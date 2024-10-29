@@ -58,7 +58,7 @@ def receive_data_gas():
 
             # Supongamos que 'data' tiene un campo 'name' y 'value'
             sql = "INSERT INTO  sensor_gas (escala_ppm) VALUES (%s)"
-            values = (data['medicion'])
+            values = (data['medicion'],)
 
             cursor.execute(sql, values)
             connection.commit()
