@@ -130,8 +130,11 @@ def receive_data_sensor_movimiento():
             cursor = connection.cursor()
 
             # Supongamos que 'data' tiene un campo 'name' y 'value'
-            sql = "INSERT INTO  sensor_movimiento (fecha,hora,mensaje) VALUES (%s,%s,%s)"
-            values = (data['fecha'], data['hora'], data['mensaje'])
+            # sql = "INSERT INTO  sensor_movimiento (fecha,hora,mensaje) VALUES (%s,%s,%s)"
+            # values = (data['fecha'], data['hora'], data['mensaje'])
+
+            sql = "INSERT INTO  sensor_movimiento (mensaje) VALUES (%s)"
+            values = (data['mensaje'])
 
             cursor.execute(sql, values)
             connection.commit()
