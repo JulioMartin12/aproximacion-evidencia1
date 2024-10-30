@@ -28,7 +28,7 @@ connect_wifi()
 
 # ============= Función para enviar un POST a la API ============================
 def send_post_request(humedad):
-    url = "https://control-de-riego-automatico.onrender.com/api/riego/data"
+    url = "https://aproximacion-evidencia1.onrender.com/api/humedad"
     data = {'humedad': humedad}
     json_data = ujson.dumps(data)
 
