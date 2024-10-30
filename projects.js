@@ -5,13 +5,16 @@ function goToProject(projectId) {
 
     switch (projectId) {
       case 1:
-        projectUrl = "https://wokwi.com/projects/408580463353840641"; 
+        projectUrl = "https://wokwi.com/projects/410869104388279297"; 
         break;
       case 2:
         projectUrl = "https://wokwi.com/projects/408568500712542209"; 
         break;
       case 3:
         projectUrl = "https://wokwi.com/projects/410878492815642625"; 
+        break;
+      case 4:
+        projectUrl = "https://wokwi.com/projects/410874071167261697"; 
         break;
       default:
         console.error("Proyecto no encontrado");

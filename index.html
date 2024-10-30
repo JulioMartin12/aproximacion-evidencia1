@@ -8,28 +8,54 @@
 </head>
 <body>
 
-<h1>Evidencia 2 de Aproximación al Mundo Laboral</h1> <!-- Título agregado -->
+<h1>Evidencia 3 de Aproximación al Mundo Laboral</h1> <!-- Título agregado -->
 
-<div class="container">
-  <div class="project">
-    <img src="Detector de Movimiento con Alarma/esquema.JPG" alt="Detector de Movimiento">
-    <div class="buttons">
-      <button onclick="goToProject(1)">Ir al Proyecto</button>
+<section id="proyectos">
+  <h2>Proyectos en Wokwi</h2>
+  <div class="container">    
+    <div class="project">
+      <p>Detector de Movimiento con Alarma</p>
+      <img src="Detector de Movimiento con Alarma/esquema.JPG" alt="Detector de Movimiento">
+      <div class="buttons">
+        <button onclick="goToProject(1)">Ir al Proyecto</button>
+      </div>
+    </div>
+    <div class="project">
+      <p>Monitor de Calidad del Aire</p>
+      <img src="Monitor de calidad del aire/esquema.jpg" alt="Monitor de Calidad del Aire">
+      <div class="buttons">
+        <button onclick="goToProject(2)">Ir al Proyecto</button>
+      </div>
+    </div>
+    <div class="project">
+      <p>Monitor de Nivel de Sonido</p>
+      <img src="Monitor-de-nivel-de-sonido/Monitor-de-nivel-de-sonido.JPG" alt="Monitor de Nivel de Sonido">
+      <div class="buttons">
+        <button onclick="goToProject(3)">Ir al Proyecto</button>
+      </div>
+    </div>
+    <div class="project">
+      <p>Control de Riego automático</p>
+      <img src="Control de Riego Automático/esp32-control-riego.jpg" alt="Control de Riego">
+      <div class="buttons">
+        <button onclick="goToProject(4)">Ir al Proyecto</button>
+      </div>
     </div>
   </div>
-  <div class="project">
-    <img src="Monitor de calidad del aire/esquema.jpg" alt="Monitor de Calidad del Aire">
-    <div class="buttons">
-      <button onclick="goToProject(2)">Ir al Proyecto</button>
+
+</section>
+<section id="grafana">
+  <h2>Monitoero en Grafana</h2>
+  <div class="container">
+    <div class="grafana">
+      <a href="https://programacionwebolmos.grafana.net/public-dashboards/d6765463afe14c2e8f94b1c75c9d1244" target="_blank">
+        <img src="grafana/img/dashboardgrafana.jpg" alt="Dashboard Grafana">
+        <p>Nuestro Dashboard en Grafana</p>
+      </a>
     </div>
   </div>
-  <div class="project">
-    <img src="Monitor-de-nivel-de-sonido/Monitor-de-nivel-de-sonido.JPG" alt="Monitor de Nivel de Sonido">
-    <div class="buttons">
-      <button onclick="goToProject(3)">Ir al Proyecto</button>
-    </div>
-  </div>
-</div>
+</section>
+
 
 <table id="tabla-datos" style="display: none;">
   <thead>
@@ -37,6 +63,7 @@
       <th>Campo 1</th>
       <th>Campo 2</th>
       <th>Campo 3</th>
+      <th>Campo 4</th>
     </tr>
   </thead>
   <tbody>
