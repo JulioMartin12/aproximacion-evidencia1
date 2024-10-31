@@ -4,33 +4,22 @@ import mysql.connector
 from mysql.connector import Error
 from flask_cors import CORS
 import os
-<<<<<<< HEAD
-from dotenv import load_dotenv
-
-# Carga las variables de entorno
-load_dotenv()
-
-=======
 
 
 # ----
->>>>>>> 3de6abf2308f840c340f74e2061e6a8509744882
 app = Flask(__name__)
 
 # Configuración de la base de datos MySQL
 db_config = {
     'host': os.getenv("HOST"),
-    'user': os.getenv("USER"),  # Cambié a USERNAME según tu .env
+    'user': os.getenv("USER"),
     'password': os.getenv("PASSWORD"),
     'database': os.getenv("DB")
 }
 
-# Verificación de la configuración
-print(f"Host: {db_config['host']}")
-print(f"User: {db_config['user']}")
-print(f"Database: {db_config['database']}")
-
 # Función para conectarse a MySQL
+
+
 def connect_to_db():
     try:
         connection = mysql.connector.connect(
@@ -46,39 +35,32 @@ def connect_to_db():
         return None
 
 # Ruta para la raíz
+
+
 @app.route('/')
 def home():
     return "<p>Bienvenido a la API de los Desprogramadores</p>"
 
-<<<<<<< HEAD
-# Ruta para recibir datos en la tabla gases
-@app.route('/api/gases/data', methods=['POST'])
-def receive_data():
-=======
 
 # MARCELO
 # ------------------------------------------------------------------------------------------
 @app.route('/api/gas/data', methods=['POST'])
 def receive_data_gas():
->>>>>>> 3de6abf2308f840c340f74e2061e6a8509744882
     if request.is_json:
         data = request.get_json()
+
+        # Ejemplo: Insertar los datos recibidos en una tabla MySQL
         try:
             connection = connect_to_db()
             if connection is None:
                 return jsonify({"error": "No se pudo conectar a la base de datos"}), 500
 
             cursor = connection.cursor()
-<<<<<<< HEAD
-            sql = "INSERT INTO gases (escala_ppm) VALUES (%s)"
-            values = (data['medicion'],)
-=======
 
             # Supongamos que 'data' tiene un campo 'name' y 'value'
             sql = "INSERT INTO  sensor_gas (escala_ppm) VALUES (%s)"
             values = (data['medicion'],)
 
->>>>>>> 3de6abf2308f840c340f74e2061e6a8509744882
             cursor.execute(sql, values)
             connection.commit()
 
@@ -91,12 +73,10 @@ def receive_data_gas():
             if connection and connection.is_connected():
                 cursor.close()
                 connection.close()
+
     else:
         return jsonify({"error": "El formato de los datos no es JSON"}), 400
 
-<<<<<<< HEAD
-# Ruta para obtener datos de la tabla monitor_sonido
-=======
 
 @app.route('/api/get/gas/data', methods=['GET'])
 def get_data_gas():
@@ -278,4 +258,3 @@ def receive_data_riego():
 
     else:
         return jsonify({"error": "El formato de los datos no es JSON"}), 400
-
