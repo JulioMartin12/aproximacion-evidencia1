@@ -225,11 +225,6 @@ def save_monitor_sonido():
 # ALAN - Riego Automático
 # ------------------------------------------------------------------------------------------
 
-# Ruta para la raíz
-@app.route('/')
-def home():
-    return "<p>Bienvenido a la API de Riego Automático</p>"
-
 # Ruta para recibir datos de humedad
 @app.route('/api/riego', methods=['POST'])
 def receive_data_riego():
@@ -264,31 +259,3 @@ def receive_data_riego():
     else:
         return jsonify({"error": "El formato de los datos no es JSON"}), 400
 
-# Ruta para el reporte
-@app.route('/reporte')
-def reporte():
-    return "<p>Reporte de Humedad</p>"
-
-@app.route('/saluda')
-def hello_world():
-    return "<p>Hola, bienvenido al sistema de riego automático</p>"
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
-# aca deberiamos mostrar los datos guardados
-
-
-@app.route('/reporte')
-def reporte():
-    return "<p>Alto Reporte</p>"
-
-
-@app.route('/saluda')
-def hello_world():
-    return "<p>Hola perros</p>"
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
