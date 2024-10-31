@@ -231,7 +231,7 @@ def home():
     return "<p>Bienvenido a la API de Riego Automático</p>"
 
 # Ruta para recibir datos de humedad
-@app.route('/api/riego/data', methods=['POST'])
+@app.route('/api/riego', methods=['POST'])
 def receive_data_riego():
     if request.is_json:
         data = request.get_json()
