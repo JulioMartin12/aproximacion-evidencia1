@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evidencia 3 de Aproximación</title>
+  <link rel="icon" type="image/x-icon" href="grafana/img/icono.ico">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<h1>Evidencia 3 de Aproximación al Mundo Laboral</h1> <!-- Título agregado -->
+<section id="introduccion">
+  <h2>Integrantes:</h2>
+  <ul>
+    <li>Alan Marini</li>
+    <li>Julio Martin</li>
+    <li>Gustavo Olmos</li>
+    <li>Marcelo Portillo</li>    
+  </ul>
+</section>
+<section id="proyectos">
+  <h2>Proyectos en Wokwi</h2>
+  <div class="container">    
+    <div class="project">
+      <p>Detector de Movimiento con Alarma</p>
+      <img src="Detector de Movimiento con Alarma/esquema.JPG" alt="Detector de Movimiento">
+      <div class="buttons">
+        <button onclick="goToProject(1)">Ir al Proyecto</button>
+      </div>
+    </div>
+    <div class="project">
+      <p>Monitor de Calidad del Aire</p>
+      <img src="Monitor de calidad del aire/esquema.jpg" alt="Monitor de Calidad del Aire">
+      <div class="buttons">
+        <button onclick="goToProject(2)">Ir al Proyecto</button>
+      </div>
+    </div>
+    <div class="project">
+      <p>Monitor de Nivel de Sonido</p>
+      <img src="Monitor-de-nivel-de-sonido/Monitor-de-nivel-de-sonido.JPG" alt="Monitor de Nivel de Sonido">
+      <div class="buttons">
+        <button onclick="goToProject(3)">Ir al Proyecto</button>
+      </div>
+    </div>
+    <div class="project">
+      <p>Control de Riego automático</p>
+      <img src="Control de Riego Automático/esp32-control-riego.jpg" alt="Control de Riego">
+      <div class="buttons">
+        <button onclick="goToProject(4)">Ir al Proyecto</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="grafana">
+  <h2>Monitoreo en Grafana</h2>
+  <div class="container">
+    <div class="grafana">
+      <a href="https://programacionwebolmos.grafana.net/public-dashboards/d6765463afe14c2e8f94b1c75c9d1244" target="_blank">
+        <img src="grafana/img/dashboardgrafana.jpg" alt="Dashboard Grafana">
+        <p>Nuestro Dashboard en Grafana</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<table id="tabla-datos" style="display: none;">
+  <thead>
+    <tr>
+      <th>Campo 1</th>
+      <th>Campo 2</th>
+      <th>Campo 3</th>
+      <th>Campo 4</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  </tbody>
+</table>  
+<script src="projects.js"></script>
+<script src="getData.js"></script>
+<script src="table.js"></script>
+</body>
+</html>
