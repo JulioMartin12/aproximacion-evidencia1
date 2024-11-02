@@ -1,5 +1,9 @@
   body {
-    background-color: #f0f8ff; 
+    background-image: url('https://services.meteored.com/img/article/para-qual-lugar-o-universo-esta-se-expandindo-1685829316554_1280.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
     font-family: Arial, sans-serif; 
     text-align: center; 
     margin: 0; 
@@ -12,7 +16,7 @@
     margin-bottom: 20px; 
     padding: 10px; 
     border-radius: 10px; 
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 0.759); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   }
 
@@ -28,19 +32,32 @@
     justify-content: space-between; 
     align-items: center;
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.759);
     padding: 15px;
     /* margin: 20px; */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
     overflow: hidden;
   }
+
+  @media (max-width: 640px) {
+    .titulo {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .titulo h1,
+    .titulo img {
+      margin: 20px;
+    }
+  }
   
   .titulo h1,
   .titulo img {
     display: inline-block;
     vertical-align: middle;
-    background-color: none;
+    background-color: transparent;
     box-shadow: none; 
     margin: 0;
     padding: 0;
@@ -54,10 +71,26 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
+  @media (max-width: 640px) {
+    .titulo h1,
+    .titulo img {
+      margin: 20px;
+      padding: 20PX;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .titulo img {
+    width: 200px;
+    height: 200px;  
+    }
+    
+  }
+
   .project {
     margin: 20px;
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.759);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -81,7 +114,7 @@
   .grafana {
     margin: 20px;
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.759);
     padding-top: 50px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
