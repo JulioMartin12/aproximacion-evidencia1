@@ -22,4 +22,4 @@ Se organizan los proyectos en carpetas individuales dentro de este repositorio. 
 
 ### 3- [Monitor de nivel de sonido.](https://github.com/JulioMartin12/aproximacion-evidencia1/tree/main/Monitor-de-nivel-de-sonido)
 
-### 4- [Monitor de nivel de sonido.](https://github.com/JulioMartin12/aproximacion-evidencia1/tree/main/Monitor-de-nivel-de-sonido)
+### 4- [Control de Riego Automático.](https://github.com/JulioMartin12/aproximacion-evidencia1/tree/main/Control%20de%20Riego%20Autom%C3%A1tico)
