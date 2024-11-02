@@ -34,7 +34,6 @@
     text-align: center;
     background-color: rgba(255, 255, 255, 0.759);
     padding: 15px;
-    /* margin: 20px; */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    
     overflow: hidden;
@@ -115,11 +114,22 @@
     margin: 20px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.759);
-    padding-top: 50px;
+    padding: 50px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* width: 300px; */
     overflow: hidden;
+  }
+
+  @media (max-width: 640px) {
+    .grafana {
+      margin: 10px;
+    }
+    
+  }
+
+  .grafana a {
+    text-decoration: none;
   }
 
   .grafana img {
@@ -130,11 +140,17 @@
     transition: transform 0.3s ease;
   }
 
-  .grafana a img {
-    transition: transform 0.2s ease-in-out;
+  @media (max-width: 640px) {
+    .grafana img {
+    width: 100%;
+    height: auto; 
+    margin: 0; 
+    padding: 0;
+    }
+    
   }
   
-  .grafana a img:hover {
+  .grafana img:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
