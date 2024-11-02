@@ -1,4 +1,4 @@
-# Evidencia de Aprendizaje N° 1 de Aproximación al Mundo del trabajo.
+# Evidencia de Aprendizaje N° 3 de Aproximación al Mundo del Trabajo.
 
 ## TECNICATURA SUPERIOR EN Desarrollo de Software.
 
@@ -7,6 +7,7 @@
 
 ## ***Integrantes:***
 
+* Marini Alan.
 * Martín Julio.
 * Olmos Gustavo.
 * Portillo Marcelo.
@@ -20,3 +21,5 @@ Se organizan los proyectos en carpetas individuales dentro de este repositorio. 
 ### 2- [Monitor de calidad de aire.](https://github.com/JulioMartin12/aproximacion-evidencia1/tree/main/Monitor%20de%20calidad%20del%20aire)
 
 ### 3- [Monitor de nivel de sonido.](https://github.com/JulioMartin12/aproximacion-evidencia1/tree/main/Monitor-de-nivel-de-sonido)
+
+### 4- [Monitor de nivel de sonido.](https://github.com/JulioMartin12/aproximacion-evidencia1/tree/main/Monitor-de-nivel-de-sonido)
