@@ -1,39 +1,83 @@
 # Primero llamo los módulos a trabajar:
 
-from machine import Pin, I2C
-from ssd1306 import SSD1306_I2C
+from machine import Pin, PWM
+import network
+import urequests
 import time
+import json
 
-ancho = 128
-alto = 64
 
-buzzer = Pin(13, Pin.OUT)
-pir = Pin(23, Pin.IN, Pin.PULL_DOWN)
-i2c = I2C(0, scl = Pin(22), sda = Pin(21))
-oled = SSD1306_I2C(ancho, alto, i2c)
+# Objetos:
 
+pir = Pin(15, Pin.IN, Pin.PULL_DOWN)
+zumbador = PWM(Pin(2), freq = 440, duty = 0)
+
+#Conectando a WIFI
+
+print ("Conectando a la red", end="")
+
+sta_if = network.WLAN(network.STA_IF)
+sta_if.active(True)
+sta_if.connect('Wokwi-GUEST', '')
+
+while not sta_if.isconnected():
+    print(".", end="")
+    time.sleep(0.5)
+
+print("\n")
+print("Conectando exitosamente 👌")
+print("\n")
+
+# Defino Zumbador
+def sonido(freq,sleep):
+
+    zumbador.freq(freq)
+    zumbador.duty(512)
+    time.sleep(sleep)
+
+# Apagar Zumbador:
+def apagar_zumbador():
+    zumbador.duty(0)
+
+# Función para enviar datos a la API cuando hay detección
+def enviar_datos_api():
+    url = "https://aproximacion-evidencia1.onrender.com/api/sensor_movimiento"  # Cambia el endpoint según sea necesario
+    data = {"mensaje": ["Movimiento detectado en el sensor"]}
+    headers = {'Content-Type': 'application/json'}
+
+    try:
+        response = urequests.post(url, data=json.dumps(data), headers=headers)
+        if response.status_code == 200:
+            print("Datos enviados correctamente:", response.json())
+        else:
+            print("Error al enviar los datos:", response.status_code, response.text)
+        response.close()  # Cierra la conexión para liberar memoria
+    except Exception as e:
+        print("Error en la solicitud:", e)
+        if 'response' in locals():  # Verifica si 'response' fue creada
+            response.close()  # Cierra la conexión en caso de error
+
+
+# Ciclo:
 
 while True:
-    if pir.value() == 1:
-        print("Movimiento Detectado")
+    estado = pir.value()
+    print(estado)    
+    time.sleep(1)
+
+    if estado == 1:
+        print("Hay alguien en el sensor ⚠️")
         
-        for _ in range(5):  
-            
-            oled.text("INTRUSO", 35, 20)
-            oled.text("DETECTADO !!!", 25, 30)
-            oled.show()
-            buzzer.value(1)
-            time.sleep(0.75) 
-            oled.fill(0)  
-            oled.show()
-            time.sleep(0.75)
+        frecuencias = [440, 900]
+        for _ in range(3):
+            for freq in frecuencias:
+                sonido(freq, 0.5)
+        apagar_zumbador()
 
-        time.sleep(3)
-    else:
-        print("Sin Movimientos")
+        # Enviar mensaje a la API
+        enviar_datos_api()
+        time.sleep(5)  # Retardo después de enviar los datos
 
-        oled.fill(0)
-        oled.show()
-
-        buzzer.value(0)
-        time.sleep(1)
+    elif estado == 0:
+        print("Sin movimientos")
+        apagar_zumbador()
